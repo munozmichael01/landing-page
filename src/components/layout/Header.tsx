@@ -68,11 +68,11 @@ const Header: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Sign In
+            <Button variant="ghost" size="sm" onClick={() => window.location.href = '/login'}>
+              Iniciar Sesión
             </Button>
-            <Button variant="primary" size="sm">
-              Get Demo
+            <Button variant="primary" size="sm" onClick={() => window.location.href = '/login'}>
+              Empezar Ahora
             </Button>
           </div>
 
@@ -110,11 +110,11 @@ const Header: React.FC = () => {
               </a>
             ))}
             <div className="px-4 pt-4 border-t border-gray-200 space-y-2">
-              <Button variant="ghost" size="sm" className="w-full">
-                Sign In
+              <Button variant="ghost" size="sm" className="w-full" onClick={() => window.location.href = '/login'}>
+                Iniciar Sesión
               </Button>
-              <Button variant="primary" size="sm" className="w-full">
-                Get Demo
+              <Button variant="primary" size="sm" className="w-full" onClick={() => window.location.href = '/login'}>
+                Empezar Ahora
               </Button>
             </div>
           </div>
