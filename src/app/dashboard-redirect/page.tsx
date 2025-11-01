@@ -12,8 +12,9 @@ export default function DashboardRedirectPage() {
       // Redirigir al dashboard principal de la plataforma
       window.location.href = `${process.env.NEXT_PUBLIC_FRONTEND_URL}`;
     } else if (status === 'unauthenticated') {
-      // Si no está autenticado, redirigir al login
-      window.location.href = '/login';
+      // Si no está autenticado, redirigir al login del platform
+      const platformUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3006';
+      window.location.href = `${platformUrl}/login`;
     }
   }, [status, session]);
 
