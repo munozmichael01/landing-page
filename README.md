@@ -38,8 +38,8 @@ Una landing page moderna y profesional para JobOptimizer, la plataforma de marke
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/tu-usuario/joboptimizer-landing.git
-cd joboptimizer-landing
+git clone https://github.com/munozmichael01/landing-page.git
+cd landing-page
 
 # Instalar dependencias
 npm install
