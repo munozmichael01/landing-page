@@ -1,7 +1,6 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import bcrypt from 'bcryptjs'
 
 const handler = NextAuth({
   providers: [
@@ -54,7 +53,7 @@ const handler = NextAuth({
     signIn: '/login',
   },
   callbacks: {
-    async signIn({ user, account, profile }) {
+    async signIn({ user, account }) {
       // Aquí podríamos registrar el usuario en nuestra base de datos
       if (account?.provider === 'google') {
         try {
@@ -85,7 +84,7 @@ const handler = NextAuth({
       }
       return true;
     },
-    async jwt({ token, user, account }) {
+    async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
         token.isNewUser = user.isNewUser;
@@ -93,7 +92,7 @@ const handler = NextAuth({
       return token;
     },
     async session({ session, token }) {
-      if (token) {
+      if (token && session.user) {
         session.user.id = token.id as string;
         session.user.isNewUser = token.isNewUser as boolean;
       }

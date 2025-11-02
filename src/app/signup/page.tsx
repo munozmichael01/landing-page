@@ -4,7 +4,7 @@ import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaGoogle, FaEye, FaEyeSlash, FaUser, FaEnvelope, FaLock, FaCheckCircle, FaBuilding, FaPhone } from 'react-icons/fa';
-import { Zap, UserPlus, Shield } from 'lucide-react';
+import { UserPlus } from 'lucide-react';
 import Button from '@/components/ui/SimpleButton';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -27,7 +27,7 @@ export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [success, setSuccess] = useState<string>('');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -117,9 +117,10 @@ export default function SignupPage() {
         window.location.href = dashboardUrl;
       }, 1500);
       
-    } catch (error: any) {
+    } catch (error) {
       console.error('❌ Landing: Error en registro:', error);
-      setError(error.message || 'Error al crear la cuenta. Por favor intenta de nuevo.');
+      const errorMessage = error instanceof Error ? error.message : 'Error al crear la cuenta. Por favor intenta de nuevo.';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -407,7 +408,7 @@ export default function SignupPage() {
                 {/* Submit Button */}
                 <Button
                   type="submit"
-                  disabled={loading || googleLoading || success}
+                  disabled={loading || googleLoading || !!success}
                   className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 ${
                     success 
                       ? 'bg-green-600 hover:bg-green-700 text-white'
