@@ -10,10 +10,10 @@ export default function DashboardRedirectPage() {
   useEffect(() => {
     if (status === 'authenticated' && session) {
       // Redirigir al dashboard principal de la plataforma
-      window.location.href = `${process.env.NEXT_PUBLIC_FRONTEND_URL}`;
+      window.location.href = `${process.env.NEXT_PUBLIC_PLATFORM_URL}`;
     } else if (status === 'unauthenticated') {
       // Si no está autenticado, redirigir al login del platform
-      const platformUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3006';
+      const platformUrl = process.env.NEXT_PUBLIC_PLATFORM_URL || 'http://localhost:3006';
       window.location.href = `${platformUrl}/login`;
     }
   }, [status, session]);

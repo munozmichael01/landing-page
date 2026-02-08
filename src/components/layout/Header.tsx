@@ -72,7 +72,7 @@ const Header: React.FC = () => {
               variant="ghost" 
               size="sm" 
               onClick={() => {
-                const platformUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3006';
+                const platformUrl = process.env.NEXT_PUBLIC_PLATFORM_URL || 'http://localhost:3006';
                 window.location.href = `${platformUrl}/login`;
               }}
             >
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
               variant="primary" 
               size="sm" 
               onClick={() => {
-                const platformUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3006';
+                const platformUrl = process.env.NEXT_PUBLIC_PLATFORM_URL || 'http://localhost:3006';
                 window.location.href = `${platformUrl}/login`;
               }}
             >
@@ -129,7 +129,7 @@ const Header: React.FC = () => {
                 size="sm" 
                 className="w-full" 
                 onClick={() => {
-                  const platformUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3006';
+                  const platformUrl = process.env.NEXT_PUBLIC_PLATFORM_URL || 'http://localhost:3006';
                   window.location.href = `${platformUrl}/login`;
                 }}
               >
@@ -140,7 +140,7 @@ const Header: React.FC = () => {
                 size="sm" 
                 className="w-full" 
                 onClick={() => {
-                  const platformUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3006';
+                  const platformUrl = process.env.NEXT_PUBLIC_PLATFORM_URL || 'http://localhost:3006';
                   window.location.href = `${platformUrl}/login`;
                 }}
               >

@@ -108,12 +108,12 @@ export default function OnboardingPage() {
 
   const handleCreateFirstCampaign = () => {
     // Redirigir a la plataforma principal para crear campaña
-    window.location.href = `${process.env.NEXT_PUBLIC_FRONTEND_URL}/campanas/nueva?onboarding=true`;
+    window.location.href = `${process.env.NEXT_PUBLIC_PLATFORM_URL}/campanas/nueva?onboarding=true`;
   };
 
   const handleCompleteDashboard = () => {
     // Redirigir al dashboard principal
-    window.location.href = `${process.env.NEXT_PUBLIC_FRONTEND_URL}`;
+    window.location.href = `${process.env.NEXT_PUBLIC_PLATFORM_URL}`;
   };
 
   if (status === 'loading') {

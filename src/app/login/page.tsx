@@ -7,7 +7,7 @@ export default function LoginRedirect() {
     console.log('🎯 Landing Page: Redirigiendo al dashboard login...');
     
     // Redirigir directamente al login del dashboard usando variable de entorno
-    const platformUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3006';
+    const platformUrl = process.env.NEXT_PUBLIC_PLATFORM_URL || 'http://localhost:3006';
     window.location.href = `${platformUrl}/login`;
   }, []);
 

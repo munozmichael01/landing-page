@@ -1,0 +1,6 @@
+Variables de Entorno para Landing Page en Vercel:
+
+NEXT_PUBLIC_API_URL=https://dev-job-platform-backend.vercel.app
+NEXT_PUBLIC_PLATFORM_URL=https://dev-job-platform-frontend.vercel.app
+NEXT_PUBLIC_SUPABASE_URL=https://bdswyiapdxnxexfzwzhv.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_brbj19Bs8N0RQ2E77jEIZA_DaiYN1Eg
