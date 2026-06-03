@@ -82,8 +82,7 @@ const Header: React.FC = () => {
               variant="primary" 
               size="sm" 
               onClick={() => {
-                const platformUrl = process.env.NEXT_PUBLIC_PLATFORM_URL || 'http://localhost:3006';
-                window.location.href = `${platformUrl}/login`;
+                window.location.href = '/signup';
               }}
             >
               Empezar Ahora
@@ -140,8 +139,7 @@ const Header: React.FC = () => {
                 size="sm" 
                 className="w-full" 
                 onClick={() => {
-                  const platformUrl = process.env.NEXT_PUBLIC_PLATFORM_URL || 'http://localhost:3006';
-                  window.location.href = `${platformUrl}/login`;
+                  window.location.href = '/signup';
                 }}
               >
                 Empezar Ahora
